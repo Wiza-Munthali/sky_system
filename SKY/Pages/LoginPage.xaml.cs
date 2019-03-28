@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SKY.Pages
+namespace SKY
 {
     /// <summary>
     /// Interaction logic for LoginPage.xaml
@@ -30,5 +30,10 @@ namespace SKY.Pages
         /// The secure password for this login page
         /// </summary>
         public SecureString SecurePassword => PasswordBox.SecurePassword;
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

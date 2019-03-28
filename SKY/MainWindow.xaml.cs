@@ -20,9 +20,12 @@ namespace SKY
     /// </summary>
     public partial class MainWindow : Window
     {
+        //ApplicationViewModel ApplicationViewModel => new ApplicationViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
+
             DataContext = new WindowViewModel(this);
         }
         private void ButtonPopupLogout_Click(object sender, RoutedEventArgs e)

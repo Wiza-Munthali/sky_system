@@ -18,6 +18,21 @@ namespace SKY
                 case ApplicationPage.Login:
                     return new LoginPage();
 
+                case ApplicationPage.SignUp:
+                    return new SignUpPage();
+
+                case ApplicationPage.HomePage:
+                    return new HomePage();
+
+                case ApplicationPage.DashBoard:
+                    return new DashBoardPage();
+
+                case ApplicationPage.Settings:
+                    return new Settings();
+
+                case ApplicationPage.Reminder:
+                    return new Reminder();
+
                 default:
                     Debugger.Break();
                     return null;

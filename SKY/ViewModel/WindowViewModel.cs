@@ -16,10 +16,18 @@ namespace SKY
         #endregion
 
         #region Public Properties
-        /// <summary>
-        /// The current page of the application
-        /// </summary>
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+
+        private ApplicationPage currentPage = ApplicationPage.Login;
+        public ApplicationPage CurrentPage
+        {
+            get => currentPage;
+            set
+            {
+                currentPage = value;
+                OnPropertyChanged("CurrentPage");
+            }
+        }
+
         #endregion
 
 

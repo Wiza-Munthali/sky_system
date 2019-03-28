@@ -15,6 +15,6 @@ namespace SKY
         /// <summary>
         /// The secure password 
         /// </summary>
-        SecureString SecurePassword { get; }
+        SecureString SecurePassword { get;}
     }
 }

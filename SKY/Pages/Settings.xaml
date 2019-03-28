@@ -1,0 +1,192 @@
+﻿<Page x:Class="SKY.Pages.Settings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SKY"
+      mc:Ignorable="d"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"   
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{StaticResource Montserrat-Regular}"
+      d:DesignHeight="800" d:DesignWidth="1020"
+      Title="Settings">
+
+    <Border Background="{StaticResource AzureBrush}">
+        <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!--header-->
+                    <RowDefinition Height="64"/>
+                    <!--Main content-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--Header-->
+                <Grid Background="{StaticResource WhiteBrush}" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <!--Icon-->
+                        <ColumnDefinition Width="*"/>
+                        <!--User Profile-->
+                        <ColumnDefinition Width="auto"/>
+
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <Image Source="../Assets/Images/logo.jpg" Width="38" Height="50" Margin="80 0 0 0"/>
+
+                        <TextBlock Text="sky" FontSize="19" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="0 0 60 0" Orientation="Horizontal" VerticalAlignment="Center">
+
+                        <!--Notification Button-->
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 0 10 0" ToolTip="Notifications">
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Notification.ico" Stretch="Uniform"/>
+
+
+                        </Button>
+
+                        <!--User Profile Button-->
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" ToolTip="User Profile">
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Male_User_1.ico" Stretch="Uniform"/>
+
+
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+                <!--Main Content-->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <!--Side control-->
+                        <ColumnDefinition Width="*"/>
+                        <!--Main Content-->
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--side control-->
+                    <StackPanel Grid.Column="0" Background="{StaticResource WhiteBrush}">
+                        <!--Home Button-->
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 80 0 0" >
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Home.ico" Stretch="Uniform"/>
+                        </Button>
+                        <!--Devices-->
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0" >
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Multiple_Devices.ico" Stretch="Uniform"/>
+                        </Button>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0">
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Maintenance_1.ico" Stretch="Uniform"/>
+
+                        </Button>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0">
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Gmail.ico" Stretch="Uniform"/>
+
+                        </Button>
+
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0">
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Settings.ico" Stretch="Uniform"/>
+
+                        </Button>
+                    </StackPanel>
+
+                    <!--Main Content-->
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Left" Margin="160 0 0 0">
+                        <TextBlock Text="Settings" Margin="0 20 0 10" FontFamily="{StaticResource Montserrat-Regular}"  FontSize="34"/>
+
+                        <!--Personal Data-->
+                        <materialDesign:Card Width="950" Margin="0 0 0 0" >
+                            <StackPanel>
+                                <TextBlock Text="PERSONAL DATA" FontSize="24" Foreground="{StaticResource GrayBrush}" Margin="15 30 0 0"/>
+                                <TextBlock Text="Use this page to update your contact information and change your password." FontSize="20" Margin="30 20 0 0"/>
+
+                                <!--Email-->
+                                <TextBlock Text="EMAIL ADDRESS" FontSize="20" Foreground="{StaticResource GrayBrush}" Margin="30 40 0 0"/>
+                                <TextBox materialDesign:HintAssist.Hint="Email" FontSize="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Padding="5" Margin="30 0 0 0" Width="250" HorizontalAlignment="Left"/>
+
+                                <!--Firstname, lastname, birthday-->
+                                <StackPanel Orientation="Horizontal">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <!--fIRSTNAME-->
+                                        <StackPanel Grid.Column="0">
+
+                                            <TextBlock Text="FIRST NAME" FontSize="20" Foreground="{StaticResource GrayBrush}" Margin="30 40 0 0"/>
+                                            <TextBox materialDesign:HintAssist.Hint="First name" FontSize="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Padding="5" Margin="30 0 0 0" Width="250" HorizontalAlignment="Left"/>
+
+                                        </StackPanel>
+
+                                        <!--Lastname-->
+                                        <StackPanel Grid.Column="1">
+
+                                            <TextBlock Text="LAST NAME" FontSize="20" Foreground="{StaticResource GrayBrush}" Margin="30 40 0 0"/>
+                                            <TextBox materialDesign:HintAssist.Hint="Last name" FontSize="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Padding="5" Margin="30 0 0 0" Width="250" HorizontalAlignment="Left"/>
+
+                                        </StackPanel>
+
+                                        <!--Birth date-->
+                                        <StackPanel Grid.Column="2">
+
+                                            <TextBlock Text="BIRTH DATE" FontSize="20" Foreground="{StaticResource GrayBrush}" Margin="30 40 0 0"/>
+                                            <DatePicker Width="250" FontSize="20" Margin="30 20 0 0" Padding="5" materialDesign:HintAssist.Hint="Pick Date" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+
+                                        </StackPanel>
+
+                                    </Grid>
+                                </StackPanel>
+
+                                <!--New Password, confirm password-->
+                                <StackPanel Orientation="Horizontal">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <!--New password-->
+                                        <StackPanel Grid.Column="0">
+
+                                            <TextBlock Text="NEW PASSWORD" FontSize="20" Foreground="{StaticResource GrayBrush}" Margin="30 40 0 0"/>
+                                            <TextBox materialDesign:HintAssist.Hint="New Password" FontSize="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Padding="5" Margin="30 0 0 0" Width="250" HorizontalAlignment="Left"/>
+
+                                        </StackPanel>
+
+                                        <!--Confirm-->
+                                        <StackPanel Grid.Column="1">
+
+                                            <TextBlock Text="CONFIRM PASSWORD" FontSize="20" Foreground="{StaticResource GrayBrush}" Margin="30 40 0 0"/>
+                                            <TextBox materialDesign:HintAssist.Hint="Confirm Password" FontSize="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Padding="5" Margin="30 0 0 0" Width="250" HorizontalAlignment="Left"/>
+
+                                        </StackPanel>
+
+
+
+                                    </Grid>
+                                </StackPanel>
+
+                                <Button Content="Save Changes" Width="200" HorizontalAlignment="Left" Margin="30 20 0 20" Foreground="{StaticResource WhiteBrush}" Background="{StaticResource BlueBrush}" BorderBrush="{StaticResource BlueBrush}"/>
+                            </StackPanel>
+
+                        </materialDesign:Card>
+
+                       
+
+                    </StackPanel>
+
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Border>
+</Page>

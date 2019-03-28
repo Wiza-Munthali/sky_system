@@ -1,0 +1,165 @@
+﻿<local:BasePage x:TypeArguments="local:RegisterViewModel" x:Class="SKY.SignUpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SKY"
+      mc:Ignorable="d" 
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local1="clr-namespace:SKY.Controls"
+      xmlns:local2="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{StaticResource Montserrat-Regular}"
+      
+      d:DesignHeight="800" d:DesignWidth="1020"
+      Title="SignUpPage">
+
+    <Border Background="{StaticResource WhiteBrush}">
+        
+        <Grid>
+
+            <StackPanel  VerticalAlignment="Center" >
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <!--Sign in Main Content box-->
+                    <Border>
+                        
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Border Margin="60 60 80 0">
+                                <StackPanel >
+                                    <TextBlock Text="Get started now" FontSize="34" FontFamily="{StaticResource Montserrat-Regular}" />
+                                    <TextBlock Text="Setup your new account." FontSize="24" Foreground="{StaticResource GrayBrush}" Margin=" 0 6 0 30 "/>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <materialDesign:ColorZone Background="{StaticResource WhiteBrush}"
+                                                                  Foreground="{StaticResource WhiteBrush}"
+                                                                  >
+                                            <StackPanel Orientation="Horizontal"
+                                                        Margin="2"
+                                                        >
+                                                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}"
+                                                             Margin="0"
+                                                             IsChecked="True"
+                                                             BorderBrush="{StaticResource GrayBrush}"
+                                                             BorderThickness="1"
+                                                             FontSize="20"
+                                                             Height="230"
+                                                             Width="250"
+                                                             GroupName="user">
+                                                    <local:AdminUserControl/>
+                                                </RadioButton>
+                                                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}"
+                                                             Margin="0"
+                                                             Padding="10"
+                                                             IsChecked="False"
+                                                             BorderBrush="{StaticResource GrayBrush}"
+                                                             BorderThickness="1"
+                                                             FontSize="20"
+                                                             Height="230"
+                                                             Width="250"
+                                                             GroupName="user">
+                                                    <local:StandardUserControl/>
+                                                </RadioButton>
+                                            </StackPanel>
+                                        </materialDesign:ColorZone>
+
+                                    </Grid>
+
+                                    <!--Fields-->
+                                    <TextBox materialDesign:HintAssist.Hint="First Name" 
+                                             FontSize="22" 
+                                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                             Padding="5" 
+                                             Margin="0 5 0 5" 
+                                             Width="350"
+                                             Text="{Binding Firstname, Mode=TwoWay}"/>
+
+                                    <TextBox materialDesign:HintAssist.Hint="Last Name" 
+                                             FontSize="22" 
+                                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                             Padding="5" 
+                                             Margin="0 5 0 5" 
+                                             Width="350"
+                                             Text="{Binding Lastname, Mode=TwoWay}"/>
+
+                                    <TextBox materialDesign:HintAssist.Hint="Email" 
+                                             FontSize="22" 
+                                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                             Padding="5" 
+                                             Margin="0 5 0 5" 
+                                             Width="350"
+                                             Text="{Binding Email, Mode=TwoWay}"/>
+
+                                    <TextBox materialDesign:HintAssist.Hint="Password" 
+                                             FontSize="22" 
+                                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                             Padding="5" 
+                                             Margin="0 5 0 5" 
+                                             Width="350"
+                                             Text="{Binding Password, Mode=TwoWay}"/>
+                                    
+
+                                    <!--<PasswordBox x:Name="PasswordBox" 
+                                                 FontSize="22" 
+                                                 materialDesign:HintAssist.Hint="Password" 
+                                                 Padding="5" 
+                                                 Margin="0 5 0 5" 
+                                                 Width="350" 
+                                                 />-->
+           
+
+                                    <Button
+                                        Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                                        Width="350"
+                                        Height="50"
+                                        Margin="0 10 0 0"
+                                        ToolTip="Create"
+                                        Background="{StaticResource BlueBrush}"
+                                        BorderBrush="{StaticResource BlueBrush}"
+                                        Foreground="{StaticResource WhiteBrush}"
+                                        FontSize="20"
+                                        FontFamily="{StaticResource Montserrat-Medium}"
+                                        materialDesign:RippleAssist.Feedback="#DD000000"
+                                        Command="{Binding RegisterCommand}">
+                                        Create Account
+                                    </Button>
+                                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+
+                                        <TextBlock Text="Already have an account?" FontSize="16" Margin="0 7 0 0" HorizontalAlignment="Center" Background="Transparent" Foreground="{StaticResource GrayBrush}"/>
+                                        <Button FontSize="16" 
+                                                Command="{Binding LoginCommand}"
+                                                HorizontalAlignment="Left" 
+                                                Margin="-12 0 0 0" 
+                                                Background="Transparent" 
+                                                BorderBrush="Transparent" 
+                                                Foreground="{StaticResource BlueBrush}">_Sign in</Button>
+                                    </StackPanel>
+
+                                </StackPanel>
+                               
+                            </Border>
+                        </StackPanel>
+                       
+                    </Border>
+                    
+                
+                    <Border>
+                        <Image  Width="1200" Height="800" Source="../Assets/Images/sky.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    </Border>
+
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+        
+    </Border>
+</local:BasePage>

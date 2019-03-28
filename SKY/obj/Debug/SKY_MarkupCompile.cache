@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Wiza\source\repos\SKY\SKY\App.xaml
-3-1824685297
+17-1993581205
+1124140843
+55-840222636
+20-1410970946
+Controls\Admin\AdminUserControl.xaml;Controls\Device\DeviceControlList.xaml;Controls\Device\DeviceListItemControl.xaml;Controls\LiveChartUserControl.xaml;Controls\Reminder\ReminderControlList.xaml;Controls\Reminder\ReminderListItemControl.xaml;Controls\StandardUserControl.xaml;MainWindow.xaml;Pages\DashBoardPage.xaml;Pages\Reminder.xaml;Pages\Settings.xaml;Pages\HomePage.xaml;Pages\LoginPage.xaml;Pages\SignUpPage.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;
 
-21756940377
-15-50031937
-MainWindow.xaml;Pages\HomePage.xaml;Pages\LoginPage.xaml;
-
-False
+True
 

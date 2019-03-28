@@ -12,7 +12,7 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"
+        FontFamily="{StaticResource Montserrat-Regular}"
         Foreground="#FFF"
         x:Name="AppWindow"
         Title="MainWindow" Height="800" Width="1440" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
@@ -23,77 +23,23 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
-                        <Grid>
-                            <Border Background="#FFF">
-
-                            </Border>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <!--Title Bar-->
-                                    <RowDefinition Height="65"/>
-
-                                    <!--Main Content-->
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-
-                                <!--Title Bar-->
-                                <Grid Grid.Column="0" Panel.ZIndex="1">
-
-                                    <materialDesign:ColorZone Background="#FFF" Padding="16">
-
-                                        <DockPanel>
-
-
-                                            <materialDesign:PopupBox DockPanel.Dock="Right" Foreground="#3099c9" PlacementMode="BottomAndAlignRightEdges" ToolTip="More">
-
-                                                <StackPanel Width="150">
-                                                    <Button Foreground="#3099c9" Content="Option A"/>
-                                                    <Button Foreground="#3099c9" Content="Option B"/>
-                                                    <Button Foreground="#3099c9" Content="Option C"/>
-                                                    <Separator/>
-                                                    <Button  x:Name="ButtonPopupLogout" Content="Logout" Click="ButtonPopupLogout_Click"/>
-                                                </StackPanel>
-
-                                            </materialDesign:PopupBox>
-
-
-                                            <StackPanel Orientation="Horizontal">
-
-                                                <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" Foreground="#3099c9" />
-
-
-                                                <TextBlock Foreground="#3099c9" VerticalAlignment="Center" Margin="16 0 0 0" FontSize="20">
-                                
-                                        SKY ELECTRONICS
-
-
-                                                </TextBlock>
-
-
-                                            </StackPanel>
-
-                                        </DockPanel>
-                                    </materialDesign:ColorZone>
-
-                                </Grid>
+                        
                                 <!--Main Content-->
-                                <Grid Grid.Row="1">
+                                <Grid>
                                     <ContentPresenter Content="{TemplateBinding Content}"/>
                                 </Grid>
-                            </Grid>
-                        </Grid>
+                            
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </Window.Resources>
 
-    <Grid Background="#3099c9">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="511*"/>
-            <ColumnDefinition Width="929*"/>
-        </Grid.ColumnDefinitions>
-        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}" Grid.ColumnSpan="2"/>
+    <Grid Background="White">
+
+        <Frame x:Name="MainFrame"
+               NavigationUIVisibility="Hidden"
+               Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"/>
     </Grid>
 </Window>
     
