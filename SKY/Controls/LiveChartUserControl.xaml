@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:local="clr-namespace:SKY.Controls"
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -38,7 +37,7 @@
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Foreground="White" FontSize="14">
                     <lvc:Axis.Separator>
-                        <lvc:Separator StrokeThickness="1" Stroke="#8EFFFFFF" StrokeDashArray="8" Step="100" />
+                        <lvc:Separator StrokeThickness="1" Stroke="#8EFFFFFF" StrokeDashArray="8" Step="1" />
                     </lvc:Axis.Separator>
                 </lvc:Axis>
             </lvc:CartesianChart.AxisY>

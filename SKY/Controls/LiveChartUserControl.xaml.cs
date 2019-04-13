@@ -29,7 +29,7 @@ namespace SKY
         {
             InitializeComponent();
 
-            Values = new ChartValues<double> { 150, 375, 420, 500, 160, 140 };
+            Values = new ChartValues<double> { 3, 5, 7, 9, 0, 6 };
 
             DataContext = this;
         }

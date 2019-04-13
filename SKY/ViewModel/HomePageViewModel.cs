@@ -34,6 +34,12 @@ namespace SKY
         #endregion
 
         #region Command
+        /// <summary>
+        /// The command to take you to the dashboard
+        /// </summary>
+        public ICommand HomeCommand { get; set; }
+
+
 
         /// <summary>
         /// The command to take you to the dashboard
@@ -55,6 +61,16 @@ namespace SKY
         /// The command to send you to the repair page
         /// </summary>
         public ICommand RepairCommand { get; set; }
+
+        /// <summary>
+        /// The command to send you to the repair page
+        /// </summary>
+        public ICommand HelpCommand { get; set; }
+
+        /// <summary>
+        /// The command to send you to the repair page
+        /// </summary>
+        public ICommand MessageCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -65,18 +81,30 @@ namespace SKY
         public HomePageViewModel()
         {
             //Create command
+            HomeCommand = new RelayCommand(async () => await Home());
             DashCommand = new RelayCommand(async () => await DashBoard());
             ReminderCommand = new RelayCommand(async () => await Reminder());
             SetiingsCommand = new RelayCommand(async () => await Settings());
             RepairCommand = new RelayCommand(async () => await Repair());
-
+            HelpCommand = new RelayCommand(async () => await Help());
+            MessageCommand = new RelayCommand(async () => await Message());
         }
 
 
 
         #endregion
 
+        /// <summary>
+        /// Goes to the Home
+        /// </summary>
+        public async Task Home()
+        {
+            //Go to the home page
+            ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = ApplicationPage.HomePage;
+            await Task.Delay(1);
 
+
+        }
 
 
         /// <summary>
@@ -102,8 +130,6 @@ namespace SKY
         /// <summary>
         /// Goes to the settings page
         /// </summary>
-        /// <param name="parameter"> the <see cref="SecureString"/> passed in from the view for the users password</param>
-        /// <returns></returns>
         public async Task Settings()
         {
             //Go to the settings page
@@ -116,8 +142,6 @@ namespace SKY
         /// <summary>
         /// Goes to the reminder page
         /// </summary>
-        /// <param name="parameter"> the <see cref="SecureString"/> passed in from the view for the users password</param>
-        /// <returns></returns>
         public async Task Reminder()
         {
             //Go to the reminder page
@@ -128,5 +152,28 @@ namespace SKY
         }
 
 
+        /// <summary>
+        /// Goes to the help page
+        /// </summary>
+        public async Task Help()
+        {
+            //Go to the help page
+            ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = ApplicationPage.Help;
+            await Task.Delay(1);
+
+
+        }
+
+        /// <summary>
+        /// Goes to the message page
+        /// </summary>
+        public async Task Message()
+        {
+            //Go to the help page
+            ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = ApplicationPage.Message;
+            await Task.Delay(1);
+
+
+        }
     }
 }

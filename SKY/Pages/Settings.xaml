@@ -73,27 +73,61 @@
                     <!--side control-->
                     <StackPanel Grid.Column="0" Background="{StaticResource WhiteBrush}">
                         <!--Home Button-->
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 80 0 0" >
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 80 0 0"
+                                ToolTip="Home"
+                                Command="{Binding HomeCommand}"
+                                >
                             <Image Source="/SKY;component/Assets/Icons/icons8_Home.ico" Stretch="Uniform"/>
                         </Button>
                         <!--Devices-->
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0" >
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0" 
+                                Command="{Binding DashCommand}"
+                                ToolTip="Dashboard">
                             <Image Source="/SKY;component/Assets/Icons/icons8_Multiple_Devices.ico" Stretch="Uniform"/>
                         </Button>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0">
+                        <!--Repair-->
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                Command="{Binding RepairCommand}"
+                                ToolTip="Repair">
 
                             <Image Source="/SKY;component/Assets/Icons/icons8_Maintenance_1.ico" Stretch="Uniform"/>
 
                         </Button>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0">
+
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                ToolTip="Message"
+                                Command="{Binding MessageCommand}"
+                                >
 
                             <Image Source="/SKY;component/Assets/Icons/icons8_Gmail.ico" Stretch="Uniform"/>
 
                         </Button>
 
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0">
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                Command="{Binding SetiingsCommand}"
+                                ToolTip="Settings">
 
                             <Image Source="/SKY;component/Assets/Icons/icons8_Settings.ico" Stretch="Uniform"/>
+
+                        </Button>
+
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                Command="{Binding HelpCommand}"
+                                ToolTip="Help">
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Help_2.ico" Stretch="Uniform"/>
 
                         </Button>
                     </StackPanel>

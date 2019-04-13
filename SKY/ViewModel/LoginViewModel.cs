@@ -119,14 +119,16 @@ namespace SKY
                             using (SqlConnection conn = new SqlConnection(DatabaseConnection.DBString))
                             {
                                 conn.Open();
-                                string query = "SELECT * FROM [User] WHERE user_Email = '" + email + "' AND user_Password = '" + pass + "';";
+                                string query = "SELECT * FROM [sky_User] WHERE user_Email = '" + email + "' AND user_Password = '" + EncryptedPass + "';";
                                 SqlDataAdapter sqlData = new SqlDataAdapter(query, conn);
                                 DataTable dt = new DataTable();
                                 sqlData.Fill(dt);
                                 await Task.Delay(5000);
                                 if (dt.Rows.Count == 1)
                                 {
-
+                                    CurrentUser currentUser = new CurrentUser();
+                                    currentUser.UserName = email;
+                                    
                                     //Go to Homepage
                                     ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = ApplicationPage.HomePage;
                                 }

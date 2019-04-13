@@ -1,9 +1,10 @@
-﻿<Page x:Class="SKY.Pages.DashBoardPage"
+﻿<local:BasePage x:TypeArguments="local:DashViewModel" x:Class="SKY.DashBoardPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SKY"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DashBoard">
@@ -65,27 +66,61 @@
                     <!--side control-->
                     <StackPanel Grid.Column="0" Background="{StaticResource WhiteBrush}">
                         <!--Home Button-->
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 80 0 0" >
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 80 0 0"
+                                ToolTip="Home"
+                                Command="{Binding HomeCommand}"
+                                >
                             <Image Source="/SKY;component/Assets/Icons/icons8_Home.ico" Stretch="Uniform"/>
                         </Button>
                         <!--Devices-->
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0" >
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0" 
+                                Command="{Binding DashCommand}"
+                                ToolTip="Dashboard">
                             <Image Source="/SKY;component/Assets/Icons/icons8_Multiple_Devices.ico" Stretch="Uniform"/>
                         </Button>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0">
+                        <!--Repair-->
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                Command="{Binding RepairCommand}"
+                                ToolTip="Repair">
 
                             <Image Source="/SKY;component/Assets/Icons/icons8_Maintenance_1.ico" Stretch="Uniform"/>
 
                         </Button>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0">
+
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                ToolTip="Message"
+                                Command="{Binding MessageCommand}"
+                                >
 
                             <Image Source="/SKY;component/Assets/Icons/icons8_Gmail.ico" Stretch="Uniform"/>
 
                         </Button>
 
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Height="40" Margin="0 20 0 0">
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                Command="{Binding SetiingsCommand}"
+                                ToolTip="Settings">
 
                             <Image Source="/SKY;component/Assets/Icons/icons8_Settings.ico" Stretch="Uniform"/>
+
+                        </Button>
+
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                Command="{Binding HelpCommand}"
+                                ToolTip="Help">
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Help_2.ico" Stretch="Uniform"/>
 
                         </Button>
                     </StackPanel>
@@ -98,9 +133,26 @@
                                 <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="Device Dashboard" Margin="0 20 0 10" FontFamily="{StaticResource Montserrat-Regular}"  FontSize="34"/>
-                            <Button Style="{StaticResource DefaultButton}" Grid.Column="1" Content="Search"/>
+                            <Button Style="{StaticResource MaterialDesignRaisedButton}"
+                                    Background="{StaticResource BlueBrush}"
+                                    BorderBrush="{StaticResource BlueBrush}"
+                                    Grid.Column="1" 
+                                    Content="Add"
+                                    Command="{Binding AddPageCommand}"/>
+
                         </Grid>
                         <!--Content-->
+            
+                            <materialDesign:Card  Grid.Column="0"
+                                                     Height="400" 
+                                                     Margin="0 0 0 0"
+                                                     Padding="20">
+                                <local:DeviceControlList/>
+                            </materialDesign:Card>
+
+
+                       
+
                         
 
 
@@ -112,4 +164,4 @@
             </Grid>
         </ScrollViewer>
     </Border>
-</Page>
+</local:BasePage>

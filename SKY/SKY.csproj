@@ -53,6 +53,15 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1205, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
@@ -61,6 +70,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Printing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -69,6 +83,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Twilio, Version=5.28.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.28.1\lib\net451\Twilio.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -84,6 +101,9 @@
     <Compile Include="Animations\StoryBoardHelpers.cs" />
     <Compile Include="AttachedProperties\BaseAttachedProperty.cs" />
     <Compile Include="AttachedProperties\ButtonAttachedProperty.cs" />
+    <Compile Include="Controls\AddDeviceControl.xaml.cs">
+      <DependentUpon>AddDeviceControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Admin\AdminUserControl.xaml.cs">
       <DependentUpon>AdminUserControl.xaml</DependentUpon>
     </Compile>
@@ -106,17 +126,29 @@
       <DependentUpon>StandardUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Expressions\ExpressionHelpers.cs" />
+    <Compile Include="General\CurrentUser.cs" />
     <Compile Include="General\DatabaseConnection.cs" />
-    <Compile Include="General\GeneralClass\Administrator.cs" />
-    <Compile Include="General\GeneralClass\Customer.cs" />
-    <Compile Include="General\GeneralClass\Device.cs" />
-    <Compile Include="General\GeneralClass\Repair.cs" />
-    <Compile Include="General\GeneralClass\Technician.cs" />
-    <Compile Include="General\GeneralClass\User.cs" />
+    <Compile Include="General\EmailInfo.cs" />
+    <Compile Include="Model\Administrator.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Device.cs" />
+    <Compile Include="Model\Repair.cs" />
+    <Compile Include="Model\Technician.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="General\TwilioAPI.cs" />
     <Compile Include="IoC\IoC.cs" />
+    <Compile Include="Pages\AddPage.xaml.cs">
+      <DependentUpon>AddPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\DashBoardPage.xaml.cs">
       <DependentUpon>DashBoardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Messages.xaml.cs">
+      <DependentUpon>Messages.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Reminder.xaml.cs">
       <DependentUpon>Reminder.xaml</DependentUpon>
@@ -133,21 +165,28 @@
     <Compile Include="ValueConverters\BooleanToVisiblityConverter.cs" />
     <Compile Include="ValueConverters\IoCConverter.cs" />
     <Compile Include="ValueConverters\StringRGBToBrushConverter.cs" />
+    <Compile Include="ViewModel\AddPageViewModel.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\IHavePassword.cs" />
     <Compile Include="ViewModel\Base\RelayParameterizedCommand.cs" />
     <Compile Include="ViewModel\Base\RelayCommand.cs" />
+    <Compile Include="ViewModel\DashViewModel.cs" />
     <Compile Include="ViewModel\Device\Design\DeviceListDesignModel.cs" />
     <Compile Include="ViewModel\Device\Design\DeviceListItemDesignModel.cs" />
     <Compile Include="ViewModel\Device\DeviceListItemViewModel.cs" />
     <Compile Include="ViewModel\Device\DeviceListViewModel.cs" />
     <Compile Include="ViewModel\HomePageViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MessageViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\UserControlViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
+    <Page Include="Controls\AddDeviceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Admin\AdminUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,7 +228,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DashBoardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Messages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -337,6 +388,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="LINCENSE.txt" />
+    <Resource Include="Assets\Icons\icons8_Help_2.ico" />
     <Content Include="Software Protector.exe" />
   </ItemGroup>
   <ItemGroup />

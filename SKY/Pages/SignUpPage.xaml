@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:SKY"
       mc:Ignorable="d" 
        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      xmlns:local1="clr-namespace:SKY.Controls"
       xmlns:local2="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -50,9 +49,11 @@
                                                              BorderBrush="{StaticResource GrayBrush}"
                                                              BorderThickness="1"
                                                              FontSize="20"
-                                                             Height="230"
-                                                             Width="250"
-                                                             GroupName="user">
+                                                             Height="210"
+                                                             Width="210"
+                                                             GroupName="user"
+                                                              Name="Admin"
+                                                             ToolTip="Administrator">
                                                     <local:AdminUserControl/>
                                                 </RadioButton>
                                                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}"
@@ -62,9 +63,11 @@
                                                              BorderBrush="{StaticResource GrayBrush}"
                                                              BorderThickness="1"
                                                              FontSize="20"
-                                                             Height="230"
-                                                             Width="250"
-                                                             GroupName="user">
+                                                             Height="210"
+                                                             Width="210"
+                                                             GroupName="user"
+                                                             Name="Technician"
+                                                             ToolTip="Technician">
                                                     <local:StandardUserControl/>
                                                 </RadioButton>
                                             </StackPanel>
@@ -104,16 +107,6 @@
                                              Margin="0 5 0 5" 
                                              Width="350"
                                              Text="{Binding Password, Mode=TwoWay}"/>
-                                    
-
-                                    <!--<PasswordBox x:Name="PasswordBox" 
-                                                 FontSize="22" 
-                                                 materialDesign:HintAssist.Hint="Password" 
-                                                 Padding="5" 
-                                                 Margin="0 5 0 5" 
-                                                 Width="350" 
-                                                 />-->
-           
 
                                     <Button
                                         Style="{StaticResource MaterialDesignRaisedAccentButton}"

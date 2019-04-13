@@ -49,7 +49,7 @@ namespace SKY
 
 
         /// <summary>
-        /// A flag indicating if the login command is running
+        /// A flag indicating if the register command is running
         /// </summary>
         public bool RegisterIsRunning {  get; set;}
 
@@ -95,13 +95,6 @@ namespace SKY
                 await RunCommand(() => this.RegisterIsRunning, async () => 
                 {
 
-                    /*
-                    var email = Email;
-                    var firstname = Firstname;
-                    var lastname = Lastname;
-                    var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
-                    var EncryptedPass= Eramake.eCryptography.Encrypt(pass);*/
-
                     if (string.IsNullOrEmpty(Firstname) || string.IsNullOrEmpty(Lastname) || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
                     {  
                         MessageBox.Show("Please fill in all the fields");
@@ -112,7 +105,7 @@ namespace SKY
                         using (SqlConnection conn = new SqlConnection(DatabaseConnection.DBString))
                         {
                             conn.Open();
-                            string query = "SELECT * FROM [User] WHERE user_Email = '" + email + "'";
+                            string query = "SELECT * FROM [sky_User] WHERE user_Email = '" + email + "'";
                             SqlDataAdapter sqlData = new SqlDataAdapter(query, conn);
                             DataTable dt = new DataTable();
                             sqlData.Fill(dt);
@@ -123,24 +116,21 @@ namespace SKY
                             }
                             else
                             {
-                                string query1 = "INSERT INTO [User](user_FirstName,user_LastName,user_Email,user_Password) VALUES(@fn, @ln, @e, @pwd)";
+                                var EncryptedPass = Eramake.eCryptography.Encrypt(Password);
+
+                                string query1 = "INSERT INTO [sky_User](user_FirstName,user_LastName,user_Email,user_Password) VALUES(@fn, @ln, @e, @pwd)";
                                 SqlCommand command = new SqlCommand(query1, conn);
                                 command.CommandType = CommandType.Text;
                                 command.Parameters.AddWithValue("@fn", Firstname);
                                 command.Parameters.AddWithValue("@ln", Lastname);
                                 command.Parameters.AddWithValue("@e", Email);
-                                command.Parameters.AddWithValue("@pwd", Password);
+                                command.Parameters.AddWithValue("@pwd", EncryptedPass);
 
                                 try
                                 {
                                     command.ExecuteNonQuery();
                                     MessageBox.Show("You have been registered successfully");
-
-                                    Firstname = "";
-                                    Lastname = "";
-                                    Email = "";
-                                    Password = "";
-
+                                    ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = ApplicationPage.Login;
                                 }
                                 catch (Exception ex)
                                 {

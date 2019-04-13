@@ -76,7 +76,9 @@
                         <!--Home Button-->
                         <Button Style="{StaticResource MaterialDesignFlatButton}" 
                                 Height="40" 
-                                Margin="0 80 0 0" 
+                                Margin="0 80 0 0"
+                                ToolTip="Home"
+                                Command="{Binding HomeCommand}"
                                 >
                             <Image Source="/SKY;component/Assets/Icons/icons8_Home.ico" Stretch="Uniform"/>
                         </Button>
@@ -84,33 +86,50 @@
                         <Button Style="{StaticResource MaterialDesignFlatButton}" 
                                 Height="40" 
                                 Margin="0 20 0 0" 
-                                Command="{Binding DashCommand}">
+                                Command="{Binding DashCommand}"
+                                ToolTip="Dashboard">
                             <Image Source="/SKY;component/Assets/Icons/icons8_Multiple_Devices.ico" Stretch="Uniform"/>
                         </Button>
+                        <!--Repair-->
                         <Button Style="{StaticResource MaterialDesignFlatButton}" 
                                 Height="40" 
                                 Margin="0 20 0 0"
-                                Command="{Binding RepairCommand}">
+                                Command="{Binding RepairCommand}"
+                                ToolTip="Repair">
 
                             <Image Source="/SKY;component/Assets/Icons/icons8_Maintenance_1.ico" Stretch="Uniform"/>
-                           
-                        </Button>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
-                                Height="40" 
-                                Margin="0 20 0 0"
-                                >
-                            
-                                <Image Source="/SKY;component/Assets/Icons/icons8_Gmail.ico" Stretch="Uniform"/>
-                            
+
                         </Button>
 
                         <Button Style="{StaticResource MaterialDesignFlatButton}" 
                                 Height="40" 
                                 Margin="0 20 0 0"
-                                Command="{Binding SetiingsCommand}">
-                          
-                                <Image Source="/SKY;component/Assets/Icons/icons8_Settings.ico" Stretch="Uniform"/>
-                           
+                                ToolTip="Message"
+                                Command="{Binding MessageCommand}"
+                                >
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Gmail.ico" Stretch="Uniform"/>
+
+                        </Button>
+
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                Command="{Binding SetiingsCommand}"
+                                ToolTip="Settings">
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Settings.ico" Stretch="Uniform"/>
+
+                        </Button>
+
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                                Height="40" 
+                                Margin="0 20 0 0"
+                                Command="{Binding HelpCommand}"
+                                ToolTip="Help">
+
+                            <Image Source="/SKY;component/Assets/Icons/icons8_Help_2.ico" Stretch="Uniform"/>
+
                         </Button>
                     </StackPanel>
 
@@ -134,7 +153,7 @@
                                                      Width="400" 
                                                      Height="250"
                                                      Padding="35">
-                                    
+
                                     <TextBlock FontSize="50" 
                                                TextWrapping="Wrap" 
                                                FontFamily="{StaticResource Montserrat-Light}">
@@ -160,7 +179,7 @@
                                                         Margin="0 0 0 0"
                                                         Padding="20"
                                                          Foreground="{StaticResource GrayBrush}">
-                                        <TextBlock Text="DEVICES UNDER REPAIR"  
+                                        <TextBlock Text="{Binding name}"  
                                                    FontSize="11" 
                                                    FontFamily="{StaticResource Montserrat-Medium}"/>
                                     </materialDesign:Card>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Wiza\source\repos\SKY\SKY\App.xaml
-17-1993581205
+21-31837610
 1124140843
-55-840222636
-20-1410970946
-Controls\Admin\AdminUserControl.xaml;Controls\Device\DeviceControlList.xaml;Controls\Device\DeviceListItemControl.xaml;Controls\LiveChartUserControl.xaml;Controls\Reminder\ReminderControlList.xaml;Controls\Reminder\ReminderListItemControl.xaml;Controls\StandardUserControl.xaml;MainWindow.xaml;Pages\DashBoardPage.xaml;Pages\Reminder.xaml;Pages\Settings.xaml;Pages\HomePage.xaml;Pages\LoginPage.xaml;Pages\SignUpPage.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;
+65-2025479308
+27-565711057
+Controls\AddDeviceControl.xaml;Controls\Admin\AdminUserControl.xaml;Controls\Device\DeviceControlList.xaml;Controls\Device\DeviceListItemControl.xaml;Controls\LiveChartUserControl.xaml;Controls\Reminder\ReminderControlList.xaml;Controls\Reminder\ReminderListItemControl.xaml;Controls\StandardUserControl.xaml;MainWindow.xaml;Pages\AddPage.xaml;Pages\DashBoardPage.xaml;Pages\Help.xaml;Pages\Messages.xaml;Pages\Reminder.xaml;Pages\Settings.xaml;Pages\HomePage.xaml;Pages\LoginPage.xaml;Pages\SignUpPage.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;
 
-True
+False
 

@@ -40,5 +40,19 @@
         /// </summary>
         Repair = 6,
 
+        /// <summary>
+        /// The add page
+        /// </summary>
+        AddPage = 7,
+
+        /// <summary>
+        /// The Help page
+        /// </summary>
+        Help = 8,
+
+        /// <summary>
+        /// The Help page
+        /// </summary>
+        Message = 9,
     }
 }

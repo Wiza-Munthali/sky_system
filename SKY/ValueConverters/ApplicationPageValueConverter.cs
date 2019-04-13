@@ -33,6 +33,15 @@ namespace SKY
                 case ApplicationPage.Reminder:
                     return new Reminder();
 
+                case ApplicationPage.AddPage:
+                    return new AddPage();
+
+                case ApplicationPage.Help:
+                    return new Help();
+
+                case ApplicationPage.Message:
+                    return new Messages();
+
                 default:
                     Debugger.Break();
                     return null;

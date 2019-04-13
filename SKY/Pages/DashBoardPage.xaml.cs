@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SKY.Pages
+namespace SKY
 {
     /// <summary>
     /// Interaction logic for DashBoardPage.xaml
     /// </summary>
-    public partial class DashBoardPage : Page
+    public partial class DashBoardPage : BasePage<DashViewModel>
     {
         public DashBoardPage()
         {
